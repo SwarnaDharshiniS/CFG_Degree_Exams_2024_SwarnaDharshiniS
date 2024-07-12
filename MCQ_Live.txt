@@ -1,0 +1,69 @@
+Section - 1 MCQ
+
+1. B. def
+2. C. dictionary
+3. D. tuple
+4. A. 0 1 2
+5. D. TypeError - this is a SyntaxError as ':' is missed in the def line. There is no option available as SyntaxError, I am going with TypeError. 
+	If ':' is present, then the solution would be C. 15
+6. B. Counts the number of unique values in a specific column
+7. C. SELECT student_name FROM students INNER JOIN courses ON students.student_id = courses.student_id;
+8. A. CREATE INDEX index_name ON table_name (column_name);
+9. D. Retrieves names and salaries where the employee id matches in both tables.
+10. D. OUTER JOIN
+
+Section - 2 Query Evaluation
+
+Errors in the code -
+
+1. Alias for tables - students and enrollments were used as alias s, e but it is not defined  in the code. 
+2. Join - JOIN syntax needed to be used to connect both s and e tables for student_id.
+3. GROUP BY - table aliases needed to be used correctly.
+
+Corrected code:
+
+SELECT s.student_id, s.student_name, COUNT(e.course_id) AS course_count
+FROM students s
+JOIN enrollments e ON s.student_id = e.student_id
+WHERE s.department = 'Computer Science' AND e.enrollment_date > '2020-01-01'
+GROUP BY s.student_id, s.student_name
+ORDER BY course_count DESC;
+
+
+Suggestions for improving or optimising the code.
+
+1. Adding Indexes:
+
+Indexes can be used to improve performance of the code.
+
+CREATE INDEX idx_students_department ON students(department);
+CREATE INDEX idx_enrollments_enrollment_date ON enrollments(enrollment_date);
+CREATE INDEX idx_enrollments_student_id ON enrollments(student_id);
+
+
+2. WHERE Clause can be optimized:
+
+Instead of using '>' in code, it is good to use '>='. This will include enrollments on January 1, 2020.
+
+WHERE s.department = 'Computer Science' AND e.enrollment_date >= '2020-01-01'
+
+3. Filtering before JOIN:
+
+It is already mentioned that the students table is large, filtering the Computer Science students before joining with the enrollments table. This can optimize the code better.
+
+FROM (SELECT student_id, student_name FROM students WHERE department = 'Computer Science') s
+JOIN enrollments e ON s.student_id = e.student_id
+
+
+Final code:
+CREATE INDEX idx_students_department ON students(department);
+CREATE INDEX idx_enrollments_enrollment_date ON enrollments(enrollment_date);
+CREATE INDEX idx_enrollments_student_id ON enrollments(student_id);
+
+SELECT s.student_id, s.student_name, COUNT(e.course_id) AS course_count
+FROM (SELECT student_id, student_name FROM students WHERE department = 'Computer Science') s
+JOIN enrollments e ON s.student_id = e.student_id
+WHERE e.enrollment_date >= '2020-01-01'
+GROUP BY s.student_id, s.student_name
+ORDER BY course_count DESC;
+
