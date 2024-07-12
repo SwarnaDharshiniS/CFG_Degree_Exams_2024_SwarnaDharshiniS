@@ -1,0 +1,90 @@
+1.1 View in SQL:
+View contains a table with rows and columns from one or more tables. It also displays the values stored in the tables.
+Create a view : 
+CREATE VIEW view_1 AS
+SELECT table_id, table_value
+FROM table_1
+WHERE table_id = 1;
+
+Difference from a table:
+A table can store data inside them where as View only displays the values stored in the respective table. This reduces memory storage.
+
+1.2 	Pull request 							Merge request
+*	This informs the changes that has been pushed to a branch	This is the process of merging the changes from one branch into another.
+* 	This happens before merging a code from branch			This combines the code from other branches into single branch without any conflicts.
+* 	E.g. git request-pull						E.g. git merge
+
+1.3 Role of the `else` block in Python exception handling:
+*	This is used in try except block.
+*	Else block runs at the end of try except block when exception is not occurred.
+
+How to use:
+try:
+    result = print(2+2) # Output: 4
+except SomeException as e:
+    print(f"An error occurred: {e}")
+else:
+    print("The operation was successful:", result) # Output: The operation was successful: None
+
+In the above code, try block is executed and except block throws an error is exception occurred. 
+The else block is executed when an exception is not occurred. 
+
+1.4 Three different API request methods:
+
+i) GET: This function retrieves data from the server.
+Usage: To obtain data from a specific resource without making any changes to it.
+Example: Obtaining a list of users from a server.
+Successful status code: 200 (OK).
+
+ii) POST: This function sends data to the server to build a new resource.
+Usage: Used to submit data for processing, such as creating a new user or submitting a new blog item.
+Example: Filling out a registration form to create a new user account.
+Successful Status Code: 201 (Created).
+
+iii) PUT: Updates an existing resource on the server.
+Usage: Send data to completely update an existing resource.
+Example: Updating an existing user's information.
+Successful Status Codes: 200 (OK) or 204 (No Content).
+
+1.5 Three roles in a scrum team:
+
+i) Product Owner: In charge of creating the product backlog, prioritising work, and ensuring that the team adds value to the business.
+ii) Scrum Master: Helps the team follow agile methods and removes roadblocks to progress.
+iii) Development Team: In charge of delivering the product increments at the end of each sprint working along with the team.
+
+1.6 Name two types of database constraints and define their roles. 
+		Primary key 				Foreign key
+Role:		This uniquely identifies all the rows	This value hold the link between tables
+Uniqueness: 	This value is UNIQUE and NOT NULL	This value can be NULL and hold duplicate values
+Quantity:	Only one primary key per table 		Table can hold one or more foreign key 
+Indexing: 	Can be automatically indexed		Cannot be automatically indexed
+
+1.7 Difference between the break and continue statements:
+Break statement - breaks out the current loop immediately and proceeds with the next statement after the loop. 
+It terminates the current loop.
+
+Example:
+for i in range(5):
+    if i == 2:
+        break  # Loop stops completely when i is 2
+    print(i)  # Output: 0, 1
+
+Continue statement - Skips the rest of the code inside the current iteration of the loop and moves to the next iteration.
+It terminates only the current iteration of the loop.
+
+Example:
+for i in range(5):
+    if i == 2:
+        continue  # Skips the rest of the loop when i is 2
+    print(i)  # Output: 0, 1, 3, 4	
+			
+1.8 print("2" + 2)
+
+OUTPUT: 
+TypeError: can only concatenate str (not "int") to str
+
+Explanation: We are trying to add string "2" with an integer 2, which is not allowed in Python. 
+We either need to convert string to integer or vice-versa in order to rectify the error.
+Way - 1 - adding as string: print("2" + str(2))  # Output: 22
+Way - 2 - adding as integer: print(int("2") + 2)  # Output: 4 
+
