@@ -1,0 +1,82 @@
+1.1 Role of a data scientist:
+
+A data scientist works with data to find useful information that can help solve problems. They collect and analyze data, build models, and use those models to make predictions or give recommendations. They also explain their findings to others so that the information can be used to make better decisions.
+
+1.2 Outlier: 
+
+a. Definition: 
+
+Outliers are data points that has much difference from the rest of the data. It can be much higher or lower than the other values and may result from variability in the data, measurement errors, or unusual events.
+
+b. Examples: 
+
+A student scoring 100% on every exam while others score around 60-70%, A house price of 10 million in a city where the average price is 200,000.
+
+c. Should outliers always be removed? Why?
+
+Outliers should not be eliminated automatically. The decision to eliminate them is dependent on the context and cause for their existence. If the outlier is the result of a measurement error, it may be safe to eliminate it. However, if the outlier is a true observation that gives useful information (for example, highlighting uncommon but significant events), it should be kept.
+
+d. What are other possible issues that you can find in a dataset?
+
+(i) Skewed results: Outliers can have a disproportionate effect on the mean and standard deviation, producing misleading summary statistics. 
+(ii) Model performance: Outliers can degrade the performance of machine learning models. 
+(iii) Misleading patterns: Outliers can cause or obscure patterns in data, making it harder to identify actual trends. 
+(iv) Impact on clustering: In unsupervised learning, outliers can influence cluster formation, resulting in incorrect grouping. 
+
+1.3 Data cleaning:
+
+a. What is data cleaning? 
+
+Data cleaning is the process of finding, correcting, or deleting mistakes, inconsistencies, and inaccuracies in a dataset. It makes sure that the data is accurate, complete, and ready for analysis.
+
+b. Why is data cleaning important? 
+
+Data cleaning is important because unclean data can result in inaccurate analysis, faulty models, and poor decision-making. Clean data ensures that the insights obtained from it are accurate and trustworthy.
+
+c. What type of mistakes do we expect to commonly see in datasets? 
+
+(i) Typographical errors: include misspelt words and erroneous entries. 
+(ii) Missing values: Missing data values in certain fields. 
+(iii) Inconsistent formats: Data of the same type is represented in different units or formats. 
+(iv) Outliers: These are data points that has much difference from the rest of the data. 
+(v) Duplicates: This refers to repeated data entries.
+
+1.4 Unsupervised Learning - Clustering: 
+
+a. Definition: 
+
+Unsupervised learning is a type of machine learning in which the model extracts patterns from unlabelled input data. It is used for analysis. Clustering is a technique in unsupervised learning that groups data points based on their similarities. It has known number of classes, depending on the clustering group. 
+
+b. When is it used? 
+
+Clustering is used to find natural groupings in data without prior knowledge of the categories. It helps in knowing the structure of the data. 
+
+c. What is a possible real-world application of unsupervised learning?
+
+Clustering has a practical application in organising books in a library. Books can be grouped according to subjects, genres, or authors, with no predefined categories. This allows the library to automatically group books that are similar, making it easier for librarians and readers to find related works.
+
+d. What are its main limitations?
+
+(i) Lack of unambiguous cluster meanings: The generated clusters may not correspond to obvious categories, making them difficult to comprehend.
+(ii) Determining the number of clusters: Choosing the optimum number of clusters can be difficult, especially in a library with a wide range of books.
+(iii) Scalability issues: Managing large collections of books with complicated relationships can be computationally demanding.
+Outliers, such as rare or unusual books, may be misclassified, affecting cluster quality. 
+
+1.5 Supervised Learning - Classification: 
+
+a. Definition:
+
+Supervised learning is a type of machine learning in which the model is trained using data that is labelled, which means that the input data is associated with the proper output. It is used for prediction. Classification is a supervised learning task that aims to predict the category or class of a given data. It has known number of classes such as 0/1/2, YES/NO.
+
+b. When is it used?
+
+Classification is used when we need to apply a label to an input using previously labelled data. It is used to predict categorical outcomes. 
+
+c. What is a possible real-world application of supervised learning?
+
+Classification can be used in the real world to detect spam emails. The system classifies emails as "spam" or "not spam" based on patterns discovered in previously labelled emails. 
+
+d. What data do we need for it? Is there any processing that needs to be done?
+
+We require a labelled dataset in which each input data point is assigned the correct label. Data preprocessing is must which includes data cleaning, normalization, feature selection, and encoding categorical variables to ensure the data is in a suitable format for the model. Once it is done, we can proceed with splitting the data into train and test for model training and evaluation.
+
